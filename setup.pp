@@ -21,7 +21,7 @@ class qtorrent {
 	
 	file { '/home/pi/.vnc':
 		ensure => directory,
-		mode   => 755,
+		mode   => 777,
     }
 }
 
