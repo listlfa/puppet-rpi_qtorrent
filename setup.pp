@@ -15,7 +15,7 @@ class qtorrent {
     ->
     exec { 'init.d--vncboot':
       command => 'sudo update-rc.d /etc/init.d/vncboot defaults',
-      path    => [ "/usr/sbin/", "/bin/" ],  # alternative syntax
+      path    => [ "/usr/sbin/", "/usr/bin", "/bin/" ],  # alternative syntax
     }
 }
 
