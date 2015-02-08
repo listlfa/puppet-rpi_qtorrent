@@ -3,15 +3,15 @@
 ##Steps
 
 ###Download and install raspbian to SD card
-```
-http://www.raspberrypi.org/downloads/
-```
+Per
+- http://www.raspberrypi.org/downloads/
+
 
 
 ###login
-```
-http://www.raspberrypi.org/help/quick-start-guide/
-```
+Per
+- http://www.raspberrypi.org/help/quick-start-guide/
+
 
 ###setup pi, with
 ```bash
