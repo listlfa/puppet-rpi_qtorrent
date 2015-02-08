@@ -79,7 +79,7 @@ cd rpi_qtorrent/
 
 ###apply puppet config
 ```bash
-puppet apply setp.pp
+sudo puppet apply setup.pp
 ```
 
 
