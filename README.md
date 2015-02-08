@@ -55,5 +55,31 @@ Note:
 It will say "puppet not configured to start, please edit /etc/default/puppet to enable".  That is fine, leave this disabled.
 
 
+###create ssh keys
+per https://help.ubuntu.com/community/SSH/OpenSSH/Keys
+```bash
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+ssh-keygen -t rsa -b 4096
+```
+Notes
+- Save files to default location
+- 'Passphrase' is a password
+
+
+###config git repo and pull files
+```bash
+mkdir github-listlfa
+cd github-listlfa/
+git init
+git clone https://github.com/listlfa/rpi_qtorrent
+cd rpi_qtorrent/
+```
+
+
+###apply puppet config
+```bash
+puppet apply setp.pp
+```
 
 
