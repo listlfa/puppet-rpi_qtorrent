@@ -4,6 +4,10 @@ class qtorrent {
 	package { "tightvncserver":
 		ensure  => latest,
 	}
+	package { "qbittorrent":
+		ensure  => latest,
+	}
+	
 
 	# copied from
 	# http://elinux.org/RPi_VNC_Server#Run_at_boot
