@@ -31,8 +31,29 @@ you want to
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
+```
+
+
+###upgrade your install if installed from an old source
+```bash
+sudo apt-get update
 sudo apt-get dist-upgrade
+
+sudo reboot
+
+sudo apt-get update
+sudo apt-get upgrade
 ```
 
 
 ###install puppet
+```bash
+sudo apt-get install puppet
+```
+Note:
+
+It will say "puppet not configured to start, please edit /etc/default/puppet to enable".  That is fine, leave this disabled.
+
+
+
+
