@@ -7,6 +7,9 @@ class qtorrent {
 	package { "qbittorrent":
 		ensure  => latest,
 	}
+	package { "ipset":
+		ensure  => latest,
+	}
 	
 
 	# copied from
