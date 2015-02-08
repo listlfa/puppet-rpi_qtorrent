@@ -8,9 +8,13 @@
 # Short-Description: Start VNC Server at boot time
 # Description: Start VNC Server at boot time.
 ### END INIT INFO
+
+# Copied from
+# http://elinux.org/RPi_VNC_Server#Run_at_boot
  
-USER=root
-HOME=/root
+ 
+USER=pi
+HOME=/home/pi
 
 export USER HOME
 
