@@ -46,9 +46,9 @@ sudo apt-get upgrade
 ```
 
 
-###install puppet
+###install puppet, git
 ```bash
-sudo apt-get install puppet
+sudo apt-get install puppet git
 ```
 Note:
 
