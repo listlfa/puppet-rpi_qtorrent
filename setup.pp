@@ -28,6 +28,21 @@ class qtorrent {
 	package { "sonic-pi":
 		ensure  => purged,
 	}
+	#Game
+	package { "minecraft-pi":
+		ensure  => purged,
+	}
+	#Programming IDE
+	package { "scratch":
+		ensure  => purged,
+	}
+	#Programming Unkown
+	package { "squeak-vm":
+		ensure  => purged,
+	}
+	package { "squeak-plugins-scratch":
+		ensure  => purged,
+	}
 	
 
 	# copied from
