@@ -1,6 +1,9 @@
 ## Setup qtorrent RPI
 
 class qtorrent {
+	#	-	-	-	-
+	# Packages to Install
+	#	-	-	-	-
 	package { "tightvncserver":
 		ensure  => latest,
 	}
@@ -9,6 +12,21 @@ class qtorrent {
 	}
 	package { "ipset":
 		ensure  => latest,
+	}
+	#	-	-	-	-
+	# Packages to Remove (# remove a package and purge its config files)
+	#	-	-	-	-
+	#Video Player
+	package { "omxplayer":
+		ensure  => purged,
+	}
+	#Maths App
+	package { "wolfram-engine":
+		ensure  => purged,
+	}
+	#Music App
+	package { "sonic-pi":
+		ensure  => purged,
 	}
 	
 
