@@ -1,4 +1,4 @@
-# rpit_qtorrent
+# rpi_qtorrent
 
 ##Steps
 
