@@ -1,6 +1,6 @@
 #from http://dustinhatch.tumblr.com/post/33821945832/using-peerblock-lists-on-linux
 
-ipset create LEVEL1 hash:net maxelem
+ipset create LEVEL1 hash:net maxelem 1048576 
 
 curl -L "http://list.iblocklist.com/?list=bt_level1&fileformat=p2p&archiveformat=gz" |
     gunzip |
