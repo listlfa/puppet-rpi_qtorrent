@@ -16,6 +16,13 @@ class qtorrent {
 	package { "gawk":		#for ipset scripts
 		ensure  => latest,
 	}
+	package { "transmission":
+		ensure  => latest,
+	}
+	package { "transmission-cli":	
+		ensure  => latest,
+	}
+	
 	
 	#	-	-	-	-
 	# Packages to Remove (# remove a package and purge its config files)
