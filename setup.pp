@@ -44,7 +44,7 @@ class qtorrent {
 		ensure  => purged,
 	}
 	
-
+	#START VNC
 	# copied from
 	# http://elinux.org/RPi_VNC_Server#Run_at_boot
 	file { '/etc/init.d/vncboot':
@@ -69,7 +69,18 @@ class qtorrent {
 
 	file { '/home/pi/.vnc':
 		ensure => directory,
-		mode   => 755,
+		mode   => 776,
+	#END VNC
+	
+	#START USER SCRIPT FILES
+	file { '/home/pi/userscripts/create_ipsets.sh':
+		ensure => file,
+		owner  => pi,
+		group  => pi,
+		mode   => 776,
+		source => '/home/pi/github-listlfa/rpi_qtorrent/files/create_ipsets.sh',
+	}
+	#END USER SCRIPT FILES
     }
     
     
