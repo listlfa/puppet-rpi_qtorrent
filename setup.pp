@@ -16,10 +16,13 @@ class qtorrent {
 	package { "gawk":		#for ipset scripts
 		ensure  => latest,
 	}
-	package { "transmission":
+	package { "transmission-cli":	
 		ensure  => latest,
 	}
-	package { "transmission-cli":	
+	package { "transmission-common":
+		ensure  => latest,
+	}
+	package { "transmission-daemon":
 		ensure  => latest,
 	}
 	
