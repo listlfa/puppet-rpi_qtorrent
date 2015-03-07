@@ -89,6 +89,8 @@ sudo puppet apply setup.pp
 
 
 ###Get the pg2 updater, for ipset.  this should be more efficient than a noraml import from the bluetack .gz files
+From https://github.com/ilikenwf/pg2ipset
+
 EG manual way
 - http://dustinhatch.tumblr.com/post/33821945832/using-peerblock-lists-on-linux
 - https://www.centos.org/forums/viewtopic.php?t=8268
