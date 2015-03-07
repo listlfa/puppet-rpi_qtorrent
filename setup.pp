@@ -85,7 +85,7 @@ class qtorrent {
 		group  => pi,
 		mode   => 776,
 		source => '/home/pi/github-listlfa/rpi_qtorrent/files/create_ipsets.sh',
-		Require=>File['/home/pi/userscripts/']
+		require => File['/home/pi/userscripts/'],
 	}
 	#END USER SCRIPT FILES
     }
