@@ -74,12 +74,18 @@ class qtorrent {
 	#END VNC
 	
 	#START USER SCRIPT FILES
+	file { '/home/pi/userscripts/':
+		ensure => directory,
+		owner  => pi,
+		group  => pi,
+	}
 	file { '/home/pi/userscripts/create_ipsets.sh':
 		ensure => file,
 		owner  => pi,
 		group  => pi,
 		mode   => 776,
 		source => '/home/pi/github-listlfa/rpi_qtorrent/files/create_ipsets.sh',
+		Require=>File['/home/pi/userscripts/']
 	}
 	#END USER SCRIPT FILES
     }
