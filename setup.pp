@@ -88,7 +88,7 @@ class qtorrent {
 		require => File['/home/pi/userscripts/'],
 	}
 	#END USER SCRIPT FILES
-    }
+
     
     
 }
