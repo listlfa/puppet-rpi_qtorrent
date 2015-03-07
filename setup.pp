@@ -16,7 +16,7 @@ class qtorrent {
 	package { "gawk":		#for ipset scripts
 		ensure  => latest,
 	}
-	package { "transmission-cli":	
+	package { "transmission-cli":	#per http://www.webupd8.org/2009/12/setting-up-transmission-remote-gui-in.html
 		ensure  => latest,
 	}
 	package { "transmission-common":
