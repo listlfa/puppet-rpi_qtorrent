@@ -1,5 +1,10 @@
 # rpi_qtorrent
 
+
+##Assumptions
+- Username:pi
+
+
 ##Steps
 
 ###Download and install raspbian to SD card
