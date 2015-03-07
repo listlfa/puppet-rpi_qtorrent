@@ -87,6 +87,11 @@ class qtorrent {
 	}
 	#END VNC
 	
+	
+	#START TRANSMISSION
+	#from http://www.techjawab.com/2014/08/how-to-install-transmission-on.html
+	#END TRANMISSION
+	
 	#START USER SCRIPT FILES
 	file { '/home/pi/userscripts/':
 		ensure => directory,
