@@ -70,6 +70,7 @@ class qtorrent {
 	file { '/home/pi/.vnc':
 		ensure => directory,
 		mode   => 776,
+	}
 	#END VNC
 	
 	#START USER SCRIPT FILES
