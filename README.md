@@ -70,6 +70,7 @@ ssh-keygen -t rsa -b 4096
 Notes
 - Save files to default location
 - 'Passphrase' is a password
+- No passphrase means quick login via putty
 
 
 ###config git repo and pull files
