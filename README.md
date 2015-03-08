@@ -66,11 +66,15 @@ per https://help.ubuntu.com/community/SSH/OpenSSH/Keys
 mkdir ~/.ssh
 chmod 700 ~/.ssh
 ssh-keygen -t rsa -b 4096
+
+ssh-copy-id pi@rpi-qtorrent
+cat id_rsa.pub >> authorized_keys
 ```
 Notes
 - Save files to default location
 - 'Passphrase' is a password
 - No passphrase means quick login via putty
+- import via puttygen and export as ppk files.  putty needs the private key.
 
 
 ###config git repo and pull files
