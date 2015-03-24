@@ -5,25 +5,25 @@ class qtorrent {
 	# Packages to Install
 	#	-	-	-	-
 	package { "tightvncserver":
-		ensure  => latest,
+		ensure	=> latest,
 	}
 	package { "qbittorrent":
-		ensure  => latest,
+		ensure	=> latest,
 	}
 	package { "ipset":
-		ensure  => latest,
+		ensure	=> latest,
 	}
 	package { "gawk":		#for ipset scripts
-		ensure  => latest,
+		ensure	=> latest,
 	}
 	package { "transmission-cli":	#per http://www.webupd8.org/2009/12/setting-up-transmission-remote-gui-in.html
-		ensure  => latest,
+		ensure	=> latest,
 	}
 	package { "transmission-common":
-		ensure  => latest,
+		ensure	=> latest,
 	}
 	package { "transmission-daemon":
-		ensure  => latest,
+		ensure	=> latest,
 	}
 	
 	
@@ -32,59 +32,66 @@ class qtorrent {
 	#	-	-	-	-
 	#Video Player
 	package { "omxplayer":
-		ensure  => purged,
+		ensure	=> purged,
 	}
 	#Maths App
 	package { "wolfram-engine":
-		ensure  => purged,
+		ensure	=> purged,
 	}
 	#Music App
 	package { "sonic-pi":
-		ensure  => purged,
+		ensure	=> purged,
 	}
 	#Game
 	package { "minecraft-pi":
-		ensure  => purged,
+		ensure	=> purged,
 	}
 	#Programming IDE
 	package { "scratch":
-		ensure  => purged,
+		ensure	=> purged,
 	}
 	#Programming Unkown
 	package { "squeak-vm":
-		ensure  => purged,
+		ensure	=> purged,
 	}
 	package { "squeak-plugins-scratch":
-		ensure  => purged,
+		ensure	=> purged,
 	}
 	
 	#START VNC
 	# copied from
 	# http://elinux.org/RPi_VNC_Server#Run_at_boot
-	file { '/etc/init.d/vncboot':
-		ensure => file,
-		mode   => 755,
-		source => '/home/pi/github-listlfa/rpi_qtorrent/files/vncserver',
-		require => Package['tightvncserver'],
+	
+	$vncfiles = [	'/etc/init.d/vncboot',
+					'/etc/rc2.d/S02vncboot',
+				]
+	file { $vncfiles:
+		ensure	=> absent,
 	}
+	
+	#file { '/etc/init.d/vncboot':
+	#	ensure	=> present,
+	#	mode	=> 755,
+	#	source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/vncserver',
+	#	require	=> Package['tightvncserver'],
+	#}
 
-	exec { 'vnc--init.d':
-		#command => 'sudo update-rc.d /etc/init.d/vncboot defaults',
-		command => 'sudo update-rc.d vncboot defaults',
-		path    => [ "/usr/sbin/", "/usr/bin", "/sbin/", "/bin/" ],  # alternative syntax
-		require => File['/etc/init.d/vncboot'],
-	}
-	->
-	exec { 'vnc--password':
-		#command => 'sudo update-rc.d /etc/init.d/vncboot defaults',
-		command => 'sudo update-rc.d vncboot defaults',
-		path    => [ "/usr/sbin/", "/usr/bin", "/sbin/", "/bin/" ],  # alternative syntax
-	}
+	#exec { 'vnc--init.d':
+	#	command => 'sudo update-rc.d vncboot defaults',
+	#	path	=> [ "/usr/sbin/", "/usr/bin", "/sbin/", "/bin/" ],# alternative syntax
+	#	require	=> File['/etc/init.d/vncboot'],
+	#}
+	#->
+	#exec { 'vnc--password':
+	#	#command => 'sudo update-rc.d /etc/init.d/vncboot defaults',
+	#	command => 'sudo update-rc.d vncboot defaults',
+	#	path	=> [ "/usr/sbin/", "/usr/bin", "/sbin/", "/bin/" ],# alternative syntax
+	#}
 
-	file { '/home/pi/.vnc':
-		ensure => directory,
-		mode   => 776,
-	}
+	#file { '/home/pi/.vnc':
+	#	ensure	=> directory,
+	#	mode	=> 776,
+	#}
 	#END VNC
 	
 	
@@ -94,22 +101,22 @@ class qtorrent {
 	
 	#START USER SCRIPT FILES
 	file { '/home/pi/userscripts/':
-		ensure => directory,
-		owner  => pi,
-		group  => pi,
+		ensure	=> directory,
+		owner	=> pi,
+		group	=> pi,
 	}
 	file { '/home/pi/userscripts/create_ipsets.sh':
-		ensure => file,
-		owner  => pi,
-		group  => pi,
-		mode   => 776,
-		source => '/home/pi/github-listlfa/rpi_qtorrent/files/create_ipsets.sh',
-		require => File['/home/pi/userscripts/'],
+		ensure	=> file,
+		owner	=> pi,
+		group	=> pi,
+		mode	=> 776,
+		source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/create_ipsets.sh',
+		require	=> File['/home/pi/userscripts/'],
 	}
 	#END USER SCRIPT FILES
 
-    
-    
+	
+	
 }
 
 include qtorrent
