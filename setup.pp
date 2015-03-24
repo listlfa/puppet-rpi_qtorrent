@@ -61,6 +61,8 @@ class qtorrent {
 	#START VNC
 	# copied from
 	# http://elinux.org/RPi_VNC_Server#Run_at_boot
+	#
+	# Not starting VNC, when running headless, saves about 190MB RAM
 	
 	$vncfiles = [	'/etc/init.d/vncboot',
 					'/etc/rc2.d/S02vncboot',
