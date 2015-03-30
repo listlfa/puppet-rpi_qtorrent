@@ -25,6 +25,10 @@ class qtorrent {
 	package { "transmission-daemon":
 		ensure	=> latest,
 	}
+	package { "p7zip":
+		ensure	=> latest,
+	}
+	
 	
 	
 	#	-	-	-	-
