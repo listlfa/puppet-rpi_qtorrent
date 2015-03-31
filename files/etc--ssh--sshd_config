@@ -24,7 +24,7 @@ LogLevel INFO
 
 # Authentication:
 LoginGraceTime 120
-PermitRootLogin yes
+PermitRootLogin no #http://raspberry-at-home.com/making-raspi-visible/
 StrictModes yes
 
 RSAAuthentication yes
