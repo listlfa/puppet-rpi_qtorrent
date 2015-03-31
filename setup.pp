@@ -82,7 +82,7 @@ class qtorrent {
 	}
 
 	file { '/etc/ssh/sshd_config':
-		notify  => Service["ssh"],  # this sets up the relationship
+		notify  => Service["ssh"],  # this sets up the relationship.  Doesn't do the restart :(
 		ensure	=> file,
 		owner	=> root,
 		group	=> root,
