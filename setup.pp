@@ -75,7 +75,7 @@ class qtorrent {
 
 
 	#START SYSTEM HARDENING
-	service { "sshd":
+	service { "ssh":
 		ensure  => "running",
 		enable  => "true",
 		require => Package["openssh-server"],
