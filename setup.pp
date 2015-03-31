@@ -1,8 +1,18 @@
 ## Setup qtorrent RPI
 
 class qtorrent {
+
 	#	-	-	-	-
-	# Packages to Install
+	# Standard Packages to Ensure Installed
+	#	-	-	-	-
+	package { "openssh-server":
+		ensure	=> latest,
+	}
+
+
+
+	#	-	-	-	-
+	# Non-Standard Packages to Install
 	#	-	-	-	-
 	package { "tightvncserver":
 		ensure	=> latest,
@@ -28,9 +38,9 @@ class qtorrent {
 	package { "p7zip":
 		ensure	=> latest,
 	}
-	
-	
-	
+
+
+
 	#	-	-	-	-
 	# Packages to Remove (# remove a package and purge its config files)
 	#	-	-	-	-
@@ -61,7 +71,27 @@ class qtorrent {
 	package { "squeak-plugins-scratch":
 		ensure	=> purged,
 	}
-	
+
+
+
+	#START SYSTEM HARDENING
+	service { "sshd":
+		ensure  => "running",
+		enable  => "true",
+		require => Package["openssh-server"],
+	}
+
+	file { '/etc/ssh/sshd_config':
+		ensure	=> file,
+		owner	=> root,
+		group	=> root,
+		mode	=> 644,
+		source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/etc--ssh--sshd_config',
+	}
+	#END SYSTEM HARDENING
+
+
+
 	#START VNC
 	# copied from
 	# http://elinux.org/RPi_VNC_Server#Run_at_boot
@@ -69,7 +99,7 @@ class qtorrent {
 	# Not starting VNC, when running headless, saves about 190MB RAM
 	
 	$vncfiles = [	'/etc/init.d/vncboot',
-					'/etc/rc2.d/S02vncboot',
+			'/etc/rc2.d/S02vncboot',
 				]
 	file { $vncfiles:
 		ensure	=> absent,
@@ -99,12 +129,15 @@ class qtorrent {
 	#	mode	=> 776,
 	#}
 	#END VNC
-	
-	
+
+
+
 	#START TRANSMISSION
 	#from http://www.techjawab.com/2014/08/how-to-install-transmission-on.html
 	#END TRANMISSION
-	
+
+
+
 	#START USER SCRIPT FILES
 	file { '/home/pi/userscripts/':
 		ensure	=> directory,
@@ -121,9 +154,11 @@ class qtorrent {
 	}
 	#END USER SCRIPT FILES
 
-	
-	
+
+
 }
+
+
 
 include qtorrent
 
