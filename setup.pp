@@ -82,6 +82,7 @@ class qtorrent {
 	}
 
 	file { '/etc/ssh/sshd_config':
+		notify  => Service["ssh"],  # this sets up the relationship
 		ensure	=> file,
 		owner	=> root,
 		group	=> root,
