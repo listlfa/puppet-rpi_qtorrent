@@ -14,12 +14,14 @@ class qtorrent {
 	#	-	-	-	-
 	# Non-Standard Packages to Install
 	#	-	-	-	-
+	$package_samba = [ "samba", "samba-common-bin" ]  # http://theurbanpenguin.com/wp/?p=2415
+	
 	package { "tightvncserver":
 		ensure	=> latest,
 	}
-	package { "qbittorrent":
-		ensure	=> latest,
-	}
+	#package { "qbittorrent":
+	#	ensure	=> latest,
+	#}
 	package { "ipset":
 		ensure	=> latest,
 	}
@@ -38,6 +40,11 @@ class qtorrent {
 	package { "p7zip":
 		ensure	=> latest,
 	}
+	package { $package_samba:
+		ensure	=> latest,
+	}
+	
+	
 
 
 
@@ -157,6 +164,17 @@ class qtorrent {
 
 
 
+	#START SHARE FOLDER
+	file { '/home/pi/share/':
+		ensure	=> directory,
+		owner	=> pi,
+		group	=> pi,
+		mode	=> 1777,
+	}
+	#END SHARE FOLDER
+	
+	
+	
 }
 
 
