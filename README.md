@@ -81,7 +81,7 @@ Notes
 ```bash
 mkdir --parents ~/github-listlfa
 cd ~/github-listlfa
-(git init)
+git init
 git clone https://github.com/listlfa/rpi_qtorrent
 ```
 
@@ -102,7 +102,7 @@ EG manual way
 ```bash
 mkdir --parents ~/github-ilikenwf
 cd ~/github-ilikenwf
-(git init)
+git init
 git clone https://github.com/ilikenwf/pg2ipset
 ```
 
