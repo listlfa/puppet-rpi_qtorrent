@@ -106,4 +106,9 @@ git init
 git clone https://github.com/ilikenwf/pg2ipset
 ```
 
+```bash
+make build
+make install
+```
+
 
