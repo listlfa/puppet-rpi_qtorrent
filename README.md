@@ -79,11 +79,10 @@ Notes
 
 ###config git repo and pull files
 ```bash
-mkdir github-listlfa
-cd github-listlfa/
-git init
+mkdir --parents ~/github-listlfa
+cd ~/github-listlfa
+(git init)
 git clone https://github.com/listlfa/rpi_qtorrent
-cd rpi_qtorrent/
 ```
 
 
@@ -101,7 +100,10 @@ EG manual way
 - https://www.centos.org/forums/viewtopic.php?t=8268
 
 ```bash
-git clone https://github.com/ilikenwf/pg2ipset.git
+mkdir --parents ~/github-ilikenwf
+cd ~/github-ilikenwf
+(git init)
+git clone https://github.com/ilikenwf/pg2ipset
 ```
 
 
