@@ -108,7 +108,7 @@ git clone https://github.com/ilikenwf/pg2ipset
 
 ```bash
 make build
-make install
+sudo make install
 ```
 
 
