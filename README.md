@@ -129,7 +129,8 @@ sudo ./ipset-update.sh
 ```
 
 ####Notes
-- This installers the updates and sets up the firewall rules.  But there is no way to keep those rules in ipset between reboots.  You will have to save, before shutdown, and restore, after boot, yourself.  See below, in the Linux Notes, for the commands.
+- You have to manualled save and load these rules between reboots.
+  - This installers the updates and sets up the firewall rules.  But there is no way to keep those rules in ipset between reboots.  You will have to save, before shutdown, and restore, after boot, yourself.  See below, in the Linux Notes, for the commands.
 - Using
   - https://github.com/ilikenwf/pg2ipset
   - Lists from https://www.iblocklist.com/lists
