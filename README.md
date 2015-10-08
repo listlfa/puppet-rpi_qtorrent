@@ -124,9 +124,10 @@ BLUETACK=(ydxerpxkpcfqjaybcssw gyisgnzbhppbvsphucsw)
 ```
 
 ####Notes
-EG manual way
-- http://dustinhatch.tumblr.com/post/33821945832/using-peerblock-lists-on-linux
-- https://www.centos.org/forums/viewtopic.php?t=8268
+- This installers the updates and sets up the firewall rules.  But there is no way to keep those rules in ipset between reboots.  You will have to save, before shutdown, and restore, after boot, yourself.  See below, in the Linux Notes, for the commands.
+- A manual way
+  - http://dustinhatch.tumblr.com/post/33821945832/using-peerblock-lists-on-linux
+  - https://www.centos.org/forums/viewtopic.php?t=8268
 
 ##Rasbian Linux Notes
 
