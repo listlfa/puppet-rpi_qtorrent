@@ -93,26 +93,24 @@ sudo puppet apply setup.pp
 
 
 ###Update Firewall
-- Using https://github.com/ilikenwf/pg2ipset
-- Lists from https://www.iblocklist.com/lists
 
-Download an updater app for for ipset
+Download the updater app for ipset
 ```bash
 mkdir --parents ~/github-ilikenwf
-cd ~/github-ilikenwf
+cd ~/github-ilikenwf/pg2ipset
 git init
 git clone https://github.com/ilikenwf/pg2ipset
 ```
 
-Build and install the updater
+Build and install the updater app
 ```bash
 make build
 sudo make install
 ```
 
-Config the updater
+Config the updater app
 
-In file "ipset-update.sh" replace this
+In file "ipset-update.sh", in folder ~/github-ilikenwf/pg2ipset, replace this
 ```
 BLUETACKALIAS=(DShield Bogon Hijacked DROP ForumSpam WebExploit Ads Proxies BadSpiders CruzIT Zeus Palevo Malicious Malcode Adservers)
 BLUETACK=(xpbqleszmajjesnzddhv lujdnbasfaaixitgmxpp usrcshglbiilevmyfhse zbdlwrqkabxbcppvrnos ficutxiwawokxlcyoeye ghlzqtqxnzctvvajwwag dgxtneitpuvgqqcpfulq xoebmbyexwuiogmbyprb mcvxsnihddgutbjfbghy czvaehmjpsnwwttrdoyl ynkdjqsjyfmilsgbogqf erqajhwrxiuvjxqrrwfj npkuuhuxcsllnhoamkvm pbqcylkejciyhmwttify zhogegszwduurnvsyhdf) 
@@ -123,8 +121,16 @@ BLUETACKALIAS=(level1 level2)
 BLUETACK=(ydxerpxkpcfqjaybcssw gyisgnzbhppbvsphucsw) 
 ```
 
+Use the updater app to download and setup the firewall rules
+```
+~/github-ilikenwf/pg2ipset/ipset-update.sh
+```
+
 ####Notes
 - This installers the updates and sets up the firewall rules.  But there is no way to keep those rules in ipset between reboots.  You will have to save, before shutdown, and restore, after boot, yourself.  See below, in the Linux Notes, for the commands.
+- Using
+  - https://github.com/ilikenwf/pg2ipset
+  - Lists from https://www.iblocklist.com/lists
 - A manual way
   - http://dustinhatch.tumblr.com/post/33821945832/using-peerblock-lists-on-linux
   - https://www.centos.org/forums/viewtopic.php?t=8268
