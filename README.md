@@ -97,13 +97,14 @@ sudo puppet apply setup.pp
 Download the updater app for ipset
 ```bash
 mkdir --parents ~/github-ilikenwf
-cd ~/github-ilikenwf/pg2ipset
+cd ~/github-ilikenwf
 git init
 git clone https://github.com/ilikenwf/pg2ipset
 ```
 
 Build and install the updater app
 ```bash
+cd ~/github-ilikenwf/pg2ipset
 make build
 sudo make install
 ```
