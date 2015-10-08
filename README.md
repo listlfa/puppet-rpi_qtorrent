@@ -126,4 +126,15 @@ See lists loaded by ipset, short and long format respectively
 sudo ipset list -t
 sudo ipset list -t
 ```
+.
+Load all lists into ipset
+```bash
+sudo ipset save > /home/pi/ipset.conf
+```
+.
+Load all lists into ipset
+```bash
+cat /home/pi/ipset.conf | sudo ipset restore
+```
+
 
