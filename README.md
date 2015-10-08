@@ -112,3 +112,15 @@ sudo make install
 ```
 
 
+##Rasbian Linux Notes
+See RAM usage
+```bash
+free -lm
+```
+
+See lists loaded by ipset, short and long format respectively
+```bash
+sudo ipset list -t
+sudo ipset list -t
+```
+
