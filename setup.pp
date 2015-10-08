@@ -148,7 +148,7 @@ class qtorrent {
 		ensure	=> file,
 		owner	=> debian-transmission,
 		group	=> debian-transmission,
-		mode	=> 600,
+		mode	=> 766,
 		source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/var--lib--transmission-daemon--info--settings.json',
 	}
 	#END TRANMISSION
