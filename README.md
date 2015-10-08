@@ -93,7 +93,8 @@ sudo puppet apply setup.pp
 
 
 ###Update Firewall
-Using https://github.com/ilikenwf/pg2ipset
+- Using https://github.com/ilikenwf/pg2ipset
+- Lists from https://www.iblocklist.com/lists
 
 Download an updater app for for ipset
 ```bash
@@ -107,6 +108,18 @@ Build and install the updater
 ```bash
 make build
 sudo make install
+```
+
+Config the updater
+In file  replace this
+```
+BLUETACKALIAS=(DShield Bogon Hijacked DROP ForumSpam WebExploit Ads Proxies BadSpiders CruzIT Zeus Palevo Malicious Malcode Adservers)
+BLUETACK=(xpbqleszmajjesnzddhv lujdnbasfaaixitgmxpp usrcshglbiilevmyfhse zbdlwrqkabxbcppvrnos ficutxiwawokxlcyoeye ghlzqtqxnzctvvajwwag dgxtneitpuvgqqcpfulq xoebmbyexwuiogmbyprb mcvxsnihddgutbjfbghy czvaehmjpsnwwttrdoyl ynkdjqsjyfmilsgbogqf erqajhwrxiuvjxqrrwfj npkuuhuxcsllnhoamkvm pbqcylkejciyhmwttify zhogegszwduurnvsyhdf) 
+```
+with this
+```
+BLUETACKALIAS=(level1 level2)
+BLUETACK=(ydxerpxkpcfqjaybcssw gyisgnzbhppbvsphucsw) 
 ```
 
 ####Notes
