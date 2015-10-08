@@ -142,6 +142,13 @@ class qtorrent {
 
 	#START TRANSMISSION
 	#from http://www.techjawab.com/2014/08/how-to-install-transmission-on.html
+	file { '/var/lib/transmission-daemon/info/settings.json':
+		ensure	=> file,
+		owner	=> debian-transmission,
+		group	=> debian-transmission,
+		mode	=> 600,
+		source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/var--lib--transmission-daemon--info--settings.json',
+	}
 	#END TRANMISSION
 
 
