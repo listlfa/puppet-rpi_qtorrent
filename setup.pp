@@ -142,6 +142,8 @@ class qtorrent {
 
 	#START TRANSMISSION
 	#from http://www.techjawab.com/2014/08/how-to-install-transmission-on.html
+	
+	#https://help.ubuntu.com/community/TransmissionHowTo#Configure
 	file { '/var/lib/transmission-daemon/info/settings.json':
 		ensure	=> file,
 		owner	=> debian-transmission,
