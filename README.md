@@ -124,7 +124,8 @@ BLUETACK=(ydxerpxkpcfqjaybcssw gyisgnzbhppbvsphucsw)
 
 Use the updater app to download and setup the firewall rules
 ```
-~/github-ilikenwf/pg2ipset/ipset-update.sh
+cd ~/github-ilikenwf/pg2ipset
+sudo ./ipset-update.sh
 ```
 
 ####Notes
