@@ -164,6 +164,11 @@ Load all lists into ipset
 cat /home/pi/ipset.conf | sudo ipset restore
 ```
 
+Clear all lists out of ipset - TODO
+```bash
+cat /home/pi/ipset.conf | sudo ipset restore
+```
+
 ###VNC
 Start a VNC session ("0")
 ```bash
@@ -172,4 +177,21 @@ vncserver :0 -geometry 1920x1080 -depth 8
 Kill that same session ("0")
 ```bash
 vncserver -kill :0
+```
+
+###Torrents
+Is torrent service running?
+```bash
+sudo service transmission-daemon status
+```
+
+
+Stop torrent service (eg so we can safely turn off the peer blocking in order to run the system update)
+```bash
+sudo service transmission-daemon stop
+```
+
+Start torrent service
+```bash
+sudo service transmission-daemon start
 ```
