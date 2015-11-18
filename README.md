@@ -165,7 +165,11 @@ cat /home/pi/ipset.conf | sudo ipset restore
 ```
 
 ###VNC
-Start VNC
+Start a VNC session ("0")
 ```bash
 vncserver :0 -geometry 1920x1080 -depth 8
+```
+Kill that same session ("0")
+```bash
+vncserver -kill :0
 ```
