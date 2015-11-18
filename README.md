@@ -150,7 +150,7 @@ free -lm
 See lists loaded by ipset, short and long format respectively
 ```bash
 sudo ipset list -t
-sudo ipset list -t
+sudo ipset list
 ```
 
 Save all lists from ipset
@@ -163,4 +163,8 @@ Load all lists into ipset
 cat /home/pi/ipset.conf | sudo ipset restore
 ```
 
-
+###VNC
+Start VNC
+```bash
+vncserver :0 -geometry 1920x1080 -depth 8
+```
