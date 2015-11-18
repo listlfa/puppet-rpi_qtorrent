@@ -155,6 +155,7 @@ sudo ipset list
 
 Save all lists from ipset
 ```bash
+cp /home/pi/ipset.conf /home/pi/ipset.conf.backup
 sudo ipset save > /home/pi/ipset.conf
 ```
 
