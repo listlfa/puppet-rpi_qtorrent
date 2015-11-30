@@ -64,7 +64,7 @@ class qtorrent {
 	exec{'mlocate_updatedb':
 		refreshonly  => true,
 		command      => "bash -c 'updatedb'",
-		subscribe => package['mlocate'],
+		subscribe => Package['mlocate'],
 	}
 	# End
 
@@ -185,8 +185,6 @@ class qtorrent {
 		mode	=> 766,
 		source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/var--lib--transmission-daemon--info--settings.json',
 	}
-
-	}
 	#END TRANMISSION
 
 
@@ -217,9 +215,6 @@ class qtorrent {
 		mode	=> 1777,
 	}
 	#END SHARE FOLDER
-	
-	
-	
 }
 
 
