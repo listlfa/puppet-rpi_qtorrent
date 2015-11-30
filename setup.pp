@@ -10,6 +10,8 @@ class qtorrent {
 		source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/etc--fstab',
 	}
 	# End Devices
+	
+	
 
 	#	-	-	-	-
 	# Standard Packages to Ensure Installed
@@ -52,8 +54,19 @@ class qtorrent {
 	package { $package_samba:
 		ensure	=> latest,
 	}
+	package { "mlocate":
+		ensure	=> latest,
+	}
 	
 	
+	
+	# Start Post-Package-Install updates
+	exec{'mlocate_updatedb':
+		refreshonly  => true,
+		command      => "bash -c 'updatedb'",
+		subscribe => package['mlocate'],
+	}
+	# End
 
 
 
