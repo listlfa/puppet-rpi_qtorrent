@@ -1,0 +1,6 @@
+proc            /proc           proc    defaults          0       0
+/dev/mmcblk0p1  /boot           vfat    defaults          0       2
+/dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
+UUID=4e0e5cde-7064-40d5-a0b7-dec98702e553       /mnt/16gb_torrents      ext4    rw,noatime      0       0
+UUID=6ab999c7-3dbd-4a7e-b43a-9cda93a9ab52       /mnt/2tb_torrents      ext4    rw,noatime      0    
+# a swapfile is not a swap partition, so no using swapon|off from here on, use  dphys-swapfile swap[on|off]  for that
