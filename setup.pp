@@ -62,9 +62,10 @@ class qtorrent {
 	
 	# Start Post-Package-Install updates
 	exec{'mlocate_updatedb':
-		refreshonly  => true,
-		command      => "bash -c '/usr/bin/updatedb'",
-		subscribe => Package['mlocate'],
+		refreshonly	=> true,
+		path		=> '/usr/bin/',
+		command		=> 'updatedb',
+		subscribe	=> Package['mlocate'],
 	}
 	# End
 
