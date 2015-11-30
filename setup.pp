@@ -1,6 +1,15 @@
 ## Setup qtorrent RPI
 
 class qtorrent {
+	# Start Devices
+	file { '/etc/fstab':
+		ensure	=> file,
+		owner	=> root,
+		group	=> root,
+		mode	=> 644,
+		source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/etc--fstab',
+	}
+	# End Devices
 
 	#	-	-	-	-
 	# Standard Packages to Ensure Installed
@@ -141,8 +150,20 @@ class qtorrent {
 
 
 	#START TRANSMISSION
+	file { '/mnt/16gb_torrents/':
+		ensure	=> directory,
+		owner	=> pi,
+		group	=> pi,
+		mode	=> 1777,
+	}
+	file { '/mnt/2tb_torrents/':
+		ensure	=> directory,
+		owner	=> pi,
+		group	=> pi,
+		mode	=> 1777,
+	}
+		
 	#from http://www.techjawab.com/2014/08/how-to-install-transmission-on.html
-	
 	#https://help.ubuntu.com/community/TransmissionHowTo#Configure
 	file { '/var/lib/transmission-daemon/info/settings.json':
 		ensure	=> file,
@@ -150,6 +171,8 @@ class qtorrent {
 		group	=> debian-transmission,
 		mode	=> 766,
 		source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/var--lib--transmission-daemon--info--settings.json',
+	}
+
 	}
 	#END TRANMISSION
 
