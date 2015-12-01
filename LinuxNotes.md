@@ -6,6 +6,6 @@
 ##Disks
 
 List UUIDs
-'''bash
+```bash
 ls -la /dev/disk/by-uuid
-'''
+```
