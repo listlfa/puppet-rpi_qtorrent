@@ -176,6 +176,10 @@ class qtorrent {
 		group	=> pi,
 		mode	=> 1777,
 	}
+	file { '/home/pi/torrents':
+		ensure => 'link',
+		target => '/mnt/2gb_torrents',
+	  }
 		
 	#from http://www.techjawab.com/2014/08/how-to-install-transmission-on.html
 	#https://help.ubuntu.com/community/TransmissionHowTo#Configure
