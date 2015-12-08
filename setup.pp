@@ -127,19 +127,19 @@ class qtorrent {
 	# copied from
 	# http://elinux.org/RPi_VNC_Server#Run_at_boot
 	#
-	# Not starting VNC, when running headless, saves about 190MB RAM
+	# Not starting VNC, when running headless, saves at least 60MB RAM
 	
-	$vncfiles = [	'/etc/init.d/vncboot',
+	$vncfiles = [	'/etc/init.d/tightvncserver',
 			'/etc/rc2.d/S02vncboot',
 				]
 	file { $vncfiles:
 		ensure	=> absent,
 	}
 	
-	#file { '/etc/init.d/vncboot':
+	#file { '/etc/init.d/tightvncserver':
 	#	ensure	=> present,
 	#	mode	=> 755,
-	#	source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/vncserver',
+	#	source	=> '/home/pi/github-listlfa/rpi_qtorrent/files/etc--init.d--tightvncserver',
 	#	require	=> Package['tightvncserver'],
 	#}
 
