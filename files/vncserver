@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+# /etc/init.d/tightvncserver
+
 ### BEGIN INIT INFO
-# Provides: vncboot
+# Provides: tightvncserver
 # Required-Start: $remote_fs $syslog
 # Required-Stop: $remote_fs $syslog
 # Default-Start: 2 3 4 5
@@ -9,12 +11,6 @@
 # Description: Start VNC Server at boot time.
 ### END INIT INFO
 
-# Copied from
-# http://elinux.org/RPi_VNC_Server#Run_at_boot
- 
- 
-#!/bin/sh
-# /etc/init.d/tightvncserver
 # Customised by Stewart Watkiss
 #http://www.penguintutor.com/linux/tightvnc
 # Set the VNCUSER variable to the name of the user to start tightvncserver under
@@ -22,7 +18,7 @@ VNCUSER='pi'
 eval cd ~$VNCUSER
 case "$1" in
  start)
-   su $VNCUSER -c '/usr/bin/tightvncserver :1 -geometry 1920x1080 -depth 8'
+   su $VNCUSER -c '/usr/bin/tightvncserver :0 -geometry 1920x1080 -depth 8'
    echo "Starting TightVNC server for $VNCUSER "
    ;;
  stop)
